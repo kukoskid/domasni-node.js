@@ -83,10 +83,10 @@
 //     fs.rmdir('stuff')
 // })
 
-var http=require(`http`);
-var fs=require(`fs`);
+// var http=require(`http`);
+// var fs=require(`fs`);
 
-// var myReadStream=fs.createReadStream(__dirname + `/readMe.txt`,`utf8`);
+// // var myReadStream=fs.createReadStream(__dirname + `/readMe.txt`,`utf8`);
 // var myWriteStream=fs.createWriteStream(__dirname + `/writeMe.txt`)
 
 // // myReadStream.on(`data`,function(chunk){
@@ -101,26 +101,26 @@ var fs=require(`fs`);
 
 
 
-var server=http.createServer(function(req,res){
-    console.log(`request was made:`+ req.url)
-    if(req.url===`./home` || req.url===`/`){
-        res.writeHead(200,{"Content-Type":`text/html`});
-        fs.createReadStream(__dirname + `/index.html`).pipe(res)
+// var server=http.createServer(function(req,res){
+//     console.log(`request was made:`+ req.url)
+//     if(req.url===`./home` || req.url===`/`){
+//         res.writeHead(200,{"Content-Type":`text/html`});
+//         fs.createReadStream(__dirname + `/index.html`).pipe(res)
 
-    }
-    else if(req.url ===`/contact`){
-        res.writeHead(200,{"Content-Type":`text/html`});
-        fs.createReadStream(__dirname + `/contact.html`).pipe(res)
+//     }
+//     else if(req.url ===`/contact`){
+//         res.writeHead(200,{"Content-Type":`text/html`});
+//         fs.createReadStream(__dirname + `/contact.html`).pipe(res)
 
-    }
-    else if(re1.url===`/api/ninjas`){
-        var ninjas = [{name:`ryu`,age:29},{name:`yoshi`,age:32}]
-        res.writeHead(200,{"Content-Type":`application/json`})
-        res.end(JSON.stringify(ninjas));
-    }else{
-        res.writeHead(200,{"Content-Type":`text/html`});
-        fs.createReadStream(__dirname + `/404.html`).pipe(res)
-    }
+//     }
+//     else if(re1.url===`/api/ninjas`){
+//         var ninjas = [{name:`ryu`,age:29},{name:`yoshi`,age:32}]
+//         res.writeHead(200,{"Content-Type":`application/json`})
+//         res.end(JSON.stringify(ninjas));
+//     }else{
+//         res.writeHead(200,{"Content-Type":`text/html`});
+//         fs.createReadStream(__dirname + `/404.html`).pipe(res)
+//     }
     // res.writeHead(200, {"Content-Type":`plain/text`});
     // var myReadStream=fs.createReadStream(__dirname + `/index.html`,`utf8`);
     // var myWriteStream=fs.createWriteStream(__dirname + `/writeMe.txt`)
@@ -131,10 +131,36 @@ var server=http.createServer(function(req,res){
     //     age:29
     // }
     // res.end(JSON.stringify(myObj));
-    // res.end(`feed me popcorn`)
-});
+//     // res.end(`feed me popcorn`)
+// });
 
-server.listen(3000,`127.0.0.1`);
-console.log('yo dawgs,now listening to port 3000')
+// server.listen(3000,`127.0.0.1`);
+// console.log('yo dawgs,now listening to port 3000')
+
+
+// var express = require(`express`);
+// var bodyParser=require(`body-parser`)
+// var app=express();
+
+// var urlencodedParser=bodyParser.urlencoded({extended:false})
+
+// app.set(`view engine`,`ejs`);
+// app.use(`/assets`,express.static(`stuff`)
+//     // console.log(req.url);
+//     // next();
+// // })
+// app.length(`/`,function(req,res){
+//     res.sendFile(`index` )
+// });
+// app.post(`/contact`,urlencodedParser, function(req,res){
+//     // console.log(req.query)
+//     console.log(req.body)
+//     res.render(`contact`,{qs:req.body})
+// });
+// app.render(`/profile/:id`, function(req,res){
+//     var data={age:29,job:`ninja`, hobbies:[`eating`,`fighting`,`fishing`]}
+//     res.render(`profile`,{person:req.params.name,data:data})
+// })
+// app.listen(3000);
 
 
